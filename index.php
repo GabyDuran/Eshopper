@@ -1,3 +1,28 @@
+<?php
+  $BDProductos = array(0,"CERO",0,"");
+ $i=0; $iProductos=1; 
+ $filas=file('archivo.txt'); 
+ 
+ foreach($filas as $value){
+    list($id, $producto, $precio, $categoria) = explode(",", $value);
+    array_push($BDProductos, $id);
+    array_push($BDProductos, $producto);
+    array_push($BDProductos, $precio);
+    array_push($BDProductos, $categoria);
+    $iProductos++;
+  }
+
+  $BDAlmacen = array( 
+    array(1, 2, 3, 4, 5), //El IDProducto
+    array(0,10, 5,15, 3)); //Las Existencias
+
+  $iAlmacen = 2; //El No. de existencias
+  $BDVentas = array(
+    array(2,3), //El IDProducto
+    array(2,1), //La Cantidad
+    array(700, 200)); //El Monto
+  $iVentas = 2; //El No. de ventas al momento
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -57,6 +82,7 @@
 						por: gabriela duran
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
+								<li><a href="agregarproductos.php" target="_blank"><i class="fa fa-plus"></i>Agregar</a></li>
 								<li><a href="checkout.php"><i class="fa fa-crosshairs"></i> Pagar</a></li>
 								<li><a href="cart.php"><i class="fa fa-shopping-cart"></i> Carrito</a></li>
 								<li><a href="login.php"><i class="fa fa-lock"></i> Login</a></li>
@@ -164,13 +190,20 @@
 				<div class="col-sm-9 padding-right">
 					<div class="features_items"><!--features_items-->
 						<h2 class="title text-center">Catálogo de Productos</h2>
+						<?php
+						$n=4;
+						for($i=1;$i<$Producto; $i++){
+							?>
 						<div class="col-sm-4">
 							<div class="product-image-wrapper">
 								<div class="single-products">
 										<div class="productinfo text-center">
-											<img src="images/home/product1.jpg" alt="" />
-											<h2>$56</h2>
-											<p>Producto 1</p>
+											<?php 
+											$img=$BDProductos[$n];
+											?>
+											<img src="images/home/<?php echo $img; ?>.jpg" width="210" height="180" alt="" />
+			s								<h2><?php echo$BDProductos[$n+2];?></h2>
+											<p><?php echo$BDProductos[$n+1];?></p>
 											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al Carrito</a>
 										</div>
 										<div class="product-overlay">
