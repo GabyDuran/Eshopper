@@ -1,5 +1,5 @@
 <?php
-  $BDProductos = array(0,"CERO",0,"");
+ $BDProductos = array(0,"CERO",0,"");
  $i=0; $iProductos=1; 
  $filas=file('archivo.txt'); 
  
@@ -23,13 +23,14 @@
     array(700, 200)); //El Monto
   $iVentas = 2; //El No. de ventas al momento
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Software Punto de Venta" content="">
-    <meta name="gabriela duran" content="">
+    <meta name="Gabriela Duran" content="">
     <title>Inicio | E-Shopper</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
@@ -57,8 +58,8 @@
 					<div class="col-sm-6">
 						<div class="contactinfo">
 							<ul class="nav nav-pills">
-								<li><a href="#"><i class="fa fa-phone"></i> +52 618 109 3556 </a></li>
-								<li><a href="#"><i class="fa fa-envelope"></i> janderyalexander@gmail.com</a></li>
+								<li><a href="#"><i class="fa fa-phone"></i> +52 618 803 8106</a></li>
+								<li><a href="#"><i class="fa fa-envelope"></i> galeduji@gmail.com</a></li>
 							</ul>
 						</div>
 					</div>
@@ -77,12 +78,12 @@
 							<a href="index.php"><img src="images/home/logo.png" alt="" /></a>
 						</div>						
 					</div>
-					<h3>SOFTWARE PUNTO DE VENTA </h3>
+					<H3>SOFTWARE PUNTO DE VENTA</H3>
 					<div class="col-sm-8">
-						por: gabriela duran
+						Por: Gabriela Duran
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
-								<li><a href="agregarproductos.php" target="_blank"><i class="fa fa-plus"></i>Agregar</a></li>
+								<li><a href="agregarproductos.php" target="_blank"><i class="fa fa-plus"></i>Agregar</a></li> 
 								<li><a href="checkout.php"><i class="fa fa-crosshairs"></i> Pagar</a></li>
 								<li><a href="cart.php"><i class="fa fa-shopping-cart"></i> Carrito</a></li>
 								<li><a href="login.php"><i class="fa fa-lock"></i> Login</a></li>
@@ -175,7 +176,8 @@
 						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Categoría 1</a></h4>
+									<h4 class="panel-title"><a href="#">Damas</a></h4>
+									<h4 class="panel-title"><a href="#">Caballeros</a></h4>
 								</div>
 							</div>
 						</div><!--/category-products-->
@@ -190,33 +192,36 @@
 				<div class="col-sm-9 padding-right">
 					<div class="features_items"><!--features_items-->
 						<h2 class="title text-center">Catálogo de Productos</h2>
-						<?php
+						<?php 
 						$n=4;
-						for($i=1;$i<$Producto; $i++){
-							?>
+						for ($i=1; $i < $iProductos; $i++){
+						?>
 						<div class="col-sm-4">
 							<div class="product-image-wrapper">
 								<div class="single-products">
 										<div class="productinfo text-center">
-											<?php 
-											$img=$BDProductos[$n];
+											<?php
+											   $img = $BDProductos[$n];
 											?>
 											<img src="images/home/<?php echo $img; ?>.jpg" width="210" height="180" alt="" />
-			s								<h2><?php echo$BDProductos[$n+2];?></h2>
-											<p><?php echo$BDProductos[$n+1];?></p>
+											<h2><?php echo $BDProductos[$n+2];?></h2>
+											<p><?php echo $BDProductos[$n+1];?></p>
 											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al Carrito</a>
 										</div>
 										<div class="product-overlay">
 											<div class="overlay-content">
-												<h2>$56</h2>
-												<p>Producto 1</p>
+											<h2><?php echo $BDProductos[$n+2];?></h2>
+											<p><?php echo $BDProductos[$n+1];?></p>
 												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al Carrito</a>
 											</div>
 										</div>
 								</div>								
 							</div>
 						</div>
-						
+						 <?php 
+						     $n+=4;
+						     } 
+						 ?>
 					</div><!--features_items-->
 					
 					
@@ -234,6 +239,19 @@
 													<img src="images/home/recommend1.jpg" alt="" />
 													<h2>$50</h2>
 													<p>Producto Esp 1</p>
+													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al Carrito</a>
+												</div>
+												
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="product-image-wrapper">
+											<div class="single-products">
+												<div class="productinfo text-center">
+													<img src="images/home/recommend1.jpg" alt="" />
+													<h2>$328</h2>
+													<p>Producto Esp 8</p>
 													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al Carrito</a>
 												</div>
 												
