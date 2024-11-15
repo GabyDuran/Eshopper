@@ -202,17 +202,19 @@
 										<div class="productinfo text-center">
 											<?php
 											   $img = $BDProductos[$n];
+											   $productoB = $BDProductos[$n+1];
+											   $precioB =  $BDProductos[$n+2];
 											?>
 											<img src="images/home/<?php echo $img; ?>.jpg" width="210" height="180" alt="" />
-											<h2><?php echo $BDProductos[$n+2];?></h2>
-											<p><?php echo $BDProductos[$n+1];?></p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al Carrito</a>
+											<h2><?php echo $productoB;?></h2>
+											<p><?php echo $precioB;?></p>
+											<a href="cart.php?producto=<?php echo $productoB;?>&precio=<?php echo $precioB;?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al Carrito</a>
 										</div>
 										<div class="product-overlay">
 											<div class="overlay-content">
-											<h2><?php echo $BDProductos[$n+2];?></h2>
-											<p><?php echo $BDProductos[$n+1];?></p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al Carrito</a>
+											<h2><?php echo $productoB;?></h2>
+											<p><?php echo $precioB;?></p>
+												<a href="cart.php?producto=<?php echo $productoB;?>&precio=<?php echo $precioB;?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al Carrito</a>
 											</div>
 										</div>
 								</div>								
@@ -239,7 +241,7 @@
 													<img src="images/home/recommend1.jpg" alt="" />
 													<h2>$50</h2>
 													<p>Producto Esp 1</p>
-													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al Carrito</a>
+													<a href="cart.php" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al Carrito</a>
 												</div>
 												
 											</div>
@@ -252,7 +254,7 @@
 													<img src="images/home/recommend1.jpg" alt="" />
 													<h2>$328</h2>
 													<p>Producto Esp 8</p>
-													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al Carrito</a>
+													<a href="cart.php" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al Carrito</a>
 												</div>
 												
 											</div>
